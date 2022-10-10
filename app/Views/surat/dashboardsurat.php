@@ -82,7 +82,7 @@
                     </ul>
                 </div>
                 <thead>
-                    <tr>
+                    <tr style="background-color:#5E8B7E;color:white ;">
                         <th>Jenis Surat</th>
                         <th>No surat</th>
                         <th>Tujuan</th>

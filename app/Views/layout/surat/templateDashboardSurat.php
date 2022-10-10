@@ -89,6 +89,16 @@
                         hoverOffset: 4
                     }]
                 },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+
 
             }
 

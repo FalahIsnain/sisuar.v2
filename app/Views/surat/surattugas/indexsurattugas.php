@@ -3,7 +3,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Surat Tugas</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="index.html">Surat Tugas</a></li>
+        <li class="breadcrumb-item">Surat Tugas</li>
         <li class="breadcrumb-item active">Tables</li>
     </ol>
     <div class="card mb-4">
@@ -30,7 +30,7 @@
             </a>
             <table id="datatablesSimple">
                 <thead>
-                    <tr>
+                    <tr style="background-color:#5E8B7E;color:white ;">
                         <th>No surat</th>
                         <th>keperluan</th>
                         <th>Tempat</th>
