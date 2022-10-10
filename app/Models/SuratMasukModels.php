@@ -25,7 +25,7 @@ class SuratMasukModels extends Model
 
     public function hitungSuratMasuk()
     {
-        return $this->db->table('surat_masuk')->countAll();
+        return $this->table('surat_masuk')->countAll();
     }
 
     public function getOne($id)
@@ -38,4 +38,11 @@ class SuratMasukModels extends Model
         return $this->table('surat_masuk')->where('tanggal_masuk >=', $tglmin)->where('tanggal_masuk <=', $tglmax)->get();
     }
 
+    public function hitungSuratDisposisi()
+    {
+        return $this
+            ->table('surat_masuk')
+            ->where(["ket_surat" => "Ya"])
+            ->countAllResults();
+    }
 }

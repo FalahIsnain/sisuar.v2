@@ -21,4 +21,8 @@ class DisposisiModels extends Model
     {
         return $this->table('surat_masuk')->where('id_surat', $idSurat)->get();
     }
+    public function tableDisposisi()
+    {
+        return $this->table('surat_masuk')->where('ket_surat ==', 'Ya')->get();
+    }
 }

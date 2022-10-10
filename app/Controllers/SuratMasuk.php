@@ -167,6 +167,15 @@ class SuratMasuk extends BaseController
         $this->DisposisiModels->save($dataDisposisi);
         return redirect()->to(base_url('/SuratMasuk/disposisi/' . $id_surat));
     }
-
-    
+    public function tabelDisposisi()
+    {
+        helper(['form', 'url']);
+        $data = [
+            'title' => 'SISUAR',
+            'suratdisposisi' => $this->SuratMasukModels->where('ket_surat', 'Ya')->findAll(),
+            'validation' => \Config\Services::validation(),
+        ];
+        session()->setFlashdata('pesan', 'Berhasil Di Tambahkan');
+        return view('surat/suratmasuk/indexsuratdisposisi.php', $data);
+    }
 }

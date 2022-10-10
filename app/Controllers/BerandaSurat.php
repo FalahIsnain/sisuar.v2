@@ -33,6 +33,7 @@ class BerandaSurat extends BaseController
             'jumlahSuratMasuk' => $this->SuratMasukModels->hitungSuratMasuk(),
             'jumlahSuratKeluar' => $this->SuratKeluarModels->hitungSuratKeluar(),
             'jumlahSuratTugas' => $this->SuratTugasModels->hitungSuratTugas(),
+            'jumlahSuratDisposisi' => $this->SuratMasukModels->hitungSuratDisposisi(),
         ];
 
         return view('surat/dashboardsurat.php', $data);
