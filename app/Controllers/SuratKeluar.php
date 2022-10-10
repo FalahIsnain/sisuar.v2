@@ -34,7 +34,7 @@ class SuratKeluar extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_keluar' => $this->request->getVar('tanggal_keluar'),
-            'isi_ringkas' => $this->request->getVar('isi_ringkas'),
+            'isi_ringkas' => "-",
             'jenis_surat' => 'Keluar',
             'file' => $namaFile,
         ];

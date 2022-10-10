@@ -96,7 +96,7 @@ class SuratMasuk extends BaseController
             'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
             'isi_ringkas' => $this->request->getVar('isi_ringkas'),
             'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' => $this->request->getVar('alasan'),
+            'alasan' => "-",
             'jenis_surat' => 'Masuk',
             'file' => $namaFile,
         ]);

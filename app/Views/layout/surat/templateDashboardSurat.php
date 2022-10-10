@@ -45,15 +45,17 @@
                     labels: [
                         'Surat Masuk',
                         'Surat Keluar',
-                        'Surat Tugas'
+                        'Surat Tugas',
+                        'Surat Disposisi'
                     ],
                     datasets: [{
                         label: 'Surat',
-                        data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>, <?php echo $jumlahSuratTugas ?>],
+                        data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>, <?php echo $jumlahSuratTugas ?>,<?php echo $jumlahSuratDisposisi ?>],
                         backgroundColor: [
                             '<?php echo $suratMasukWrn ?>',
                             '<?php echo $suratKeluarWrn ?>',
-                            '<?php echo $suratTugasWrn ?>'
+                            '<?php echo $suratTugasWrn ?>',
+                            '<?php echo $suratDisposisiWrn ?>'
                         ],
                         hoverOffset: 4
                     }]

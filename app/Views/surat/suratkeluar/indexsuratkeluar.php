@@ -34,7 +34,7 @@
                         <th>No surat</th>
                         <th>Tujuan Surat</th>
                         <th>Perihal</th>
-                        <th>Isi Ringkas</th>
+                        <!-- <th>Isi Ringkas</th> -->
                         <th>Tanggal Keluar</th>
                         <th>Berkas</th>
                         <th>Aksi</th>
@@ -45,7 +45,7 @@
                         <th>No surat</th>
                         <th>Tujuan Surat</th>
                         <th>Perihal</th>
-                        <th>Isi Ringkas</th>
+                        <!-- <th>Isi Ringkas</th> -->
                         <th>Tanggal Keluar</th>
                         <th>Berkas</th>
                         <th>Aksi</th>
@@ -57,7 +57,7 @@
                             <td><?= $sm['no_surat'] ?></td>
                             <td><?= $sm['tujuan_surat'] ?></td>
                             <td><?= $sm['perihal'] ?></td>
-                            <td><?= $sm['isi_ringkas'] ?> </td>
+                            <!-- <td><?= $sm['isi_ringkas'] ?> </td> -->
                             <?php $date = date('d-M-Y', strtotime($sm['tanggal_keluar'])) ?>
                             <td><?= $date ?></td>
                             <td>
@@ -120,13 +120,13 @@
                             Tanggal Masuk Tidak Boleh Kosong!
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="validationCustom02" class="form-label">Isi Ringkas</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
                         <div class="invalid-feedback">
                             Isi Ringkas Tidak Boleh Kosong!
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
@@ -189,13 +189,13 @@
                                 Tanggal Masuk Tidak Boleh Kosong!
                             </div>
                         </div>
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <label for="validationCustom02" class="form-label">Isi Ringkas</label>
                             <input type="text" class="form-control" id="validationCustom02" value="<?= $sm['isi_ringkas'] ?>" id="isi_ringkas" name="isi_ringkas" required>
                             <div class="invalid-feedback">
                                 Isi Ringkas Tidak Boleh Kosong!
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-12">
                             <label for="validationCustom02" class="costum-file-label"><?= $sm['file'] ?></label>

@@ -8,7 +8,7 @@
     </ol>
     <div class="row">
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
+            <div class="card text-white mb-4" style="background-color:<?php echo $suratMasukWrn ?>;">
                 <div class="card-body">Surat Masuk : <?= $jumlahSuratMasuk ?></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?= base_url("/SuratMasuk") ?>">View Details</a>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-warning text-white mb-4">
+            <div class="card text-white mb-4" style="background-color:<?php echo $suratKeluarWrn ?>;">
                 <div class="card-body">Surat Keluar : <?= $jumlahSuratKeluar ?></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?= base_url("/SuratKeluar") ?>">View Details</a>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
+            <div class="card text-white mb-4" style="background-color:<?php echo $suratTugasWrn ?>;">
                 <div class="card-body">Surat Tugas : <?= $jumlahSuratTugas ?></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?= base_url("/SuratTugas") ?>">View Details</a>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-danger text-white mb-4">
+            <div class="card text-white mb-4" style="background-color:<?php echo $suratDisposisiWrn ?>;">
                 <div class="card-body">Surat Disposisi : <?= $jumlahSuratDisposisi ?></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="<?= base_url("/SuratMasuk/tabelDisposisi") ?>">View Details</a>
@@ -88,7 +88,7 @@
                         <th>Tujuan</th>
                         <th>Perihal</th>
                         <th>Tanggal</th>
-                        <th>Isi Ringkas</th>
+                        <!-- <th>Isi Ringkas</th> -->
                         <th>Berkas</th>
                     </tr>
                 </thead>
@@ -99,7 +99,7 @@
                         <th>Tujuan</th>
                         <th>Perihal</th>
                         <th>Tanggal</th>
-                        <th>Isi Ringkas</th>
+                        <!-- <th>Isi Ringkas</th> -->
                         <th>Berkas</th>
                     </tr>
                 </tfoot>
@@ -112,7 +112,7 @@
                             <td><?= $sm['perihal'] ?></td>
                             <?php $date = date('d-m-Y', strtotime($sm['tanggal_masuk'])) ?>
                             <td><?= $date ?></td>
-                            <td><?= $sm['isi_ringkas'] ?></td>
+                            <!-- <td><?= $sm['isi_ringkas'] ?></td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -126,7 +126,7 @@
                             <td><?= $sm['perihal'] ?></td>
                             <?php $date = date('d-m-Y', strtotime($sm['tanggal_keluar'])) ?>
                             <td><?= $date ?></td>
-                            <td><?= $sm['isi_ringkas'] ?> </td>
+                            <!-- <td><?= $sm['isi_ringkas'] ?> </td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -141,7 +141,7 @@
                             <td><?= $sm['tempat_tujuan'] ?></td>
                             <td><?= $sm['keperluan'] ?></td>
                             <td><?= $dateMulai ?> s/d <?= $dateSelesai ?></td>
-                            <td><?= $sm['beban_biaya'] ?> </td>
+                            <!-- <td><?= $sm['beban_biaya'] ?> </td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -170,73 +170,73 @@
                         <label for="validationCustom01" class="form-label">No surat</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" id="no_surat" name="no_surat" required>
                         <div class="invalid-feedback">
-                            Silahkan Isi No Surat!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom01" class="form-label">Asal Surat</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" id="asal_surat" name="asal_surat" required>
                         <div class="invalid-feedback">
-                            Asal Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">Tujuan Surat</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="tujuan_surat" name="tujuan_surat" required>
                         <div class="invalid-feedback">
-                            Tujuan Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">Perihal</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="perihal" name="perihal" required>
                         <div class="invalid-feedback">
-                            Perihal Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Tanggal Masuk</label>
                         <input type="date" class="form-control" id="validationCustom02" value="" id="tanggal_masuk" name="tanggal_masuk" required>
                         <div class="invalid-feedback">
-                            Tanggal Masuk Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="validationCustom02" class="form-label">Isi Ringkas</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
                         <div class="invalid-feedback">
-                            Isi Ringkas Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="validationCustom02" class="form-label">Alasan</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="alasan" name="alasan" required>
                         <div class="invalid-feedback">
-                            Alasan Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-4">
-                        <label for="validationCustom04" class="form-label">Keterangan</label>
+                        <label for="validationCustom04" class="form-label">Disposisi</label>
                         <select class="form-select" id="validationCustom04" id="ket_surat" name="ket_surat" required>
                             <option selected disabled value="">Choose...</option>
                             <option value="Ya">Ya</option>
                             <option value="tidak">Tidak</option>
                         </select>
                         <div class="invalid-feedback">
-                            Silahkan Pilih Keterangan
+                            Silahkan Pilih!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
                         <input type="file" class="form-control" aria-label="file example" name="file" required>
                         <div class="invalid-feedback">
-                            File Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Ubah</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>
 
@@ -261,7 +261,7 @@
                         <label for="validationCustom01" class="form-label">No surat</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" id="no_surat" name="no_surat" required>
                         <div class="invalid-feedback">
-                            Silahkan Isi No Surat!
+                            Mohon Diisi!
                         </div>
                     </div>
 
@@ -269,36 +269,35 @@
                         <label for="validationCustom02" class="form-label">Tujuan Surat</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="tujuan_surat" name="tujuan_surat" required>
                         <div class="invalid-feedback">
-                            Tujuan Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">Perihal</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="perihal" name="perihal" required>
                         <div class="invalid-feedback">
-                            Perihal Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Tanggal keluar</label>
                         <input type="date" class="form-control" id="validationCustom02" value="" id="tanggal_keluar" name="tanggal_keluar" required>
                         <div class="invalid-feedback">
-                            Tanggal Masuk Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="validationCustom02" class="form-label">Isi Ringkas</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
                         <div class="invalid-feedback">
-                            Isi Ringkas Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
-                    </div>
-
+                    </div> -->
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
                         <input type="file" class="form-control" aria-label="file example" name="file" required>
                         <div class="invalid-feedback">
-                            File Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -326,42 +325,42 @@
                         <label for="validationCustom01" class="form-label">No surat</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" id="no_surat" name="no_surat" required>
                         <div class="invalid-feedback">
-                            Silahkan Isi No Surat!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom01" class="form-label">Keperluan</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" id="keperluan" name="keperluan" required>
                         <div class="invalid-feedback">
-                            Asal Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">Tempat Tujuan</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="tempat_tujuan" name="tempat_tujuan" required>
                         <div class="invalid-feedback">
-                            Tujuan Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Tanggal Mulai</label>
                         <input type="date" class="form-control" id="validationCustom02" value="" id="tanggal_mulai" name="tanggal_mulai" required>
                         <div class="invalid-feedback">
-                            Tanggal Mulai Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Tanggal Selesai</label>
                         <input type="date" class="form-control" id="validationCustom02" value="" id="tanggal_selesai" name="tanggal_selesai" required>
                         <div class="invalid-feedback">
-                            Tanggal Selesai Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">Rincian Biaya</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="beban_biaya" name="beban_biaya" required>
                         <div class="invalid-feedback">
-                            Rincian Biaya Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
 
@@ -369,14 +368,14 @@
                         <label for="validationCustom02" class="form-label">Tanggal Surat di Buat</label>
                         <input type="date" class="form-control" id="validationCustom02" value="" id="tgl_rilis" name="tgl_rilis" required>
                         <div class="invalid-feedback">
-                            Tanggal Surat Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
                         <input type="file" class="form-control" aria-label="file example" name="file" required>
                         <div class="invalid-feedback">
-                            File Tidak Boleh Kosong!
+                            Mohon Diisi!
                         </div>
                     </div>
                     <div class="modal-footer">

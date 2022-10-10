@@ -158,16 +158,16 @@
                             Silahkan Pilih Keterangan
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="validationCustom02" class="form-label">Alasan</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="alasan" name="alasan" required>
                         <div class="invalid-feedback">
                             Alasan Tidak Boleh Kosong!
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-12">
-                        <label for="formFile" class="form-label">test</label>
+                        <label for="formFile" class="form-label">File</label>
                         <input class="form-control" type="file" id="formFile" name="file" required>
                         <div class="invalid-feedback">
                             File Tidak Boleh Kosong!
@@ -240,13 +240,13 @@
                             </div>
                         </div> -->
 
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <label for="validationCustom02" class="form-label">Alasan</label>
                             <input type="text" class="form-control" id="validationCustom02" value="<?= $sm['alasan'] ?>" id="alasan" name="alasan" required>
                             <div class="invalid-feedback">
                                 Alasan Tidak Boleh Kosong!
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-4">
                             <label for="validationCustom04" class="form-label">Keterangan</label>
                             <select class="form-select" id="validationCustom04" id="ket_surat" name="ket_surat" required>

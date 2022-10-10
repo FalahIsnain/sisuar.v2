@@ -23,9 +23,10 @@ class BerandaSurat extends BaseController
     {
         $data = [
             'title' => 'SISUAR',
-            'suratMasukWrn' => '#EC7272      ',
-            'suratKeluarWrn' => '#FFD369     ',
-            'suratTugasWrn' => '#63B4B8    ',
+            'suratMasukWrn' => '#EC7272',
+            'suratKeluarWrn' => '#FFC93C ',
+            'suratTugasWrn' => '#63B4B8',
+            'suratDisposisiWrn' => '#AD8B73 ',
             'btnPrimary' => '#874C62',
             'suratmasuk' => $this->SuratMasukModels->findAll(),
             'suratkeluar' => $this->SuratKeluarModels->findAll(),
@@ -49,9 +50,9 @@ class BerandaSurat extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
-            'isi_ringkas' => $this->request->getVar('isi_ringkas'),
+            'isi_ringkas' => "-",
             'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' => $this->request->getVar('alasan'),
+            'alasan' =>"-",
             'jenis_surat' => 'Surat Masuk',
             'file' =>  $namaFile,
         ];
@@ -70,7 +71,7 @@ class BerandaSurat extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_keluar' => $this->request->getVar('tanggal_keluar'),
-            'isi_ringkas' => $this->request->getVar('isi_ringkas'),
+            'isi_ringkas' => "-",
             'jenis_surat' => 'Surat Keluar',
             'file' => $namaFile,
         ];
