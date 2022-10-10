@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#5E8B7E ;">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">SISUAR</a>
     <!-- Sidebar Toggle-->

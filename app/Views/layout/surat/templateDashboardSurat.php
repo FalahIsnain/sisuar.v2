@@ -50,7 +50,7 @@
                     ],
                     datasets: [{
                         label: 'Surat',
-                        data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>, <?php echo $jumlahSuratTugas ?>,<?php echo $jumlahSuratDisposisi ?>],
+                        data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>, <?php echo $jumlahSuratTugas ?>, <?php echo $jumlahSuratDisposisi ?>],
                         backgroundColor: [
                             '<?php echo $suratMasukWrn ?>',
                             '<?php echo $suratKeluarWrn ?>',
@@ -61,6 +61,37 @@
                     }]
                 }
             }
+
+        );
+    </script>
+
+    <script>
+        var suratDashboard2 = document.getElementById('suratdashboard2').getContext('2d');
+
+        var suratDashboard2 = new Chart(suratdashboard2, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Surat Masuk',
+                        'Surat Keluar',
+                        'Surat Tugas',
+                        'Surat Disposisi'
+                    ],
+                    datasets: [{
+                        label: 'Surat',
+                        data: [<?php echo $jumlahSuratMasuk ?>, <?php echo $jumlahSuratKeluar ?>, <?php echo $jumlahSuratTugas ?>, <?php echo $jumlahSuratDisposisi ?>],
+                        backgroundColor: [
+                            '<?php echo $suratMasukWrn ?>',
+                            '<?php echo $suratKeluarWrn ?>',
+                            '<?php echo $suratTugasWrn ?>',
+                            '<?php echo $suratDisposisiWrn ?>'
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+
+            }
+
 
         );
     </script>
