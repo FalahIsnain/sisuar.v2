@@ -19,14 +19,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.header-hero-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 47%;
-  height: 100%; 
-}
  
 
 *{
