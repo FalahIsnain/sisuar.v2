@@ -17,7 +17,7 @@
         </div>
     <?php endif; ?>
     <div class="card mb-4">
-        <div class="card-header">
+        <div class="card-header" style="background-color:#60AEB2;color:white ;">
             <i class="fas fa-table me-1"></i>
             Data Surat Tugas
         </div>
@@ -30,7 +30,7 @@
             </a>
             <table id="datatablesSimple">
                 <thead>
-                    <tr style="background-color:#5E8B7E;color:white ;">
+                    <tr style="background-color:#60AEB2;color:white ;">
                         <th>No surat</th>
                         <th>keperluan</th>
                         <th>Tempat</th>

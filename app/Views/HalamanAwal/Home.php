@@ -3,7 +3,7 @@
 
 <!-- HEADER -->
 
-<div id="home" class="header-hero bg_cover d-lg-flex align-items-center" style="background-image: url(https://sibikokalsel.id/img/logo/landing1.png)">
+<div id="home" class="header-hero bg_cover d-lg-flex align-items-center" style="background-image: url(https://diskominfomc.kalselprov.go.id/wp-content/uploads/2021/11/pupr1125.jpeg);">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -86,7 +86,7 @@
 
         </div>
         <div class="col-md-5 order-md-1">
-            <img width="532" height="789" src="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2.png 732w, https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2-222x300.png 222w" sizes="(max-width: 732px) 100vw, 732px">
+            <img width="532" height="789" src="assets\img\default.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2.png 732w, https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2-222x300.png 222w" sizes="(max-width: 732px) 100vw, 732px">
         </div>
     </div>
 
@@ -141,22 +141,22 @@
         <div class="row">
             <div class="col">
                 <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala<br> Bidang </h3>
-                <img src="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/kabid2.png" width="215px" alt="">
+                <img src="assets\img\default.png" width="215px" height="220px" alt="">
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col">
                 <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Pengawasan</h3>
-                <img src="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/Kasi.png" width="215px" alt="">
+                <img src="assets\img\default.png" width="215px" height="220px" alt="">
             </div>
             <div class="col">
                 <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Pemberdayaan</h3>
-                <img src="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/kasi2-1.png" width="215px" alt="">
+                <img src="assets\img\default.png" width="215px" height="220px" alt="">
             </div>
             <div class="col">
                 <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Monev & Pengaturan</h3>
-                <img src="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/subhan-.png" width="215px" alt="">
+                <img src="assets\img\default.png" width="215px" height="220px" alt="">
             </div>
 
         </div>
