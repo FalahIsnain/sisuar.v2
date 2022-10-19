@@ -14,7 +14,6 @@ class SuratKeluarModels extends Model
         'tujuan_surat',
         'perihal',
         'tanggal_keluar',
-        'isi_ringkas',
         'file',
         'jenis_surat'
     ];

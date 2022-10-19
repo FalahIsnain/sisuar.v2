@@ -38,7 +38,8 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/', 'Home::index');
 $routes->get('/BerandaSurat', 'BerandaSurat::index');
-$routes->get('/BerandaArsip', 'BerandaArsip::index');
+$routes->get('/Arsip', 'Arsip::index');
+$routes->get('/Arsip/dashboardArsip', 'Arsip::dashboardArsip');
 $routes->get('/SuratMasuk', 'SuratMasuk::index');
 $routes->get('/SuratKeluar', 'SuratKeluar::index');
 $routes->get('/SuratTugas', 'SuratTugas::index');
@@ -53,7 +54,8 @@ $routes->add('/SuratMasuk/edit/(:any)', 'SuratMasuk::edit/$1');
 $routes->add('/SuratKeluar/edit/(:any)', 'SuratKeluar::edit/$1');
 $routes->add('/SuratTugas/edit/(:any)', 'SuratTugas::edit/$1');
 $routes->add('/SuratMasuk/disposisi/(:any)', 'SuratMasuk::disposisi/$1');
-
+$routes->get('/Arsip', 'Arsip::index');
+$routes->add('/Arsip/(:any)', 'Arsip::$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

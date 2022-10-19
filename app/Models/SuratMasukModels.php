@@ -15,9 +15,7 @@ class SuratMasukModels extends Model
         'tujuan_surat',
         'perihal',
         'tanggal_masuk',
-        'isi_ringkas',
         'ket_surat',
-        'alasan',
         'file',
         'alasan',
         'jenis_surat'

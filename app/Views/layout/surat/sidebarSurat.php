@@ -12,6 +12,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard Surat
                     </a>
+                    <a class="nav-link" href="<?= base_url("/Arsip/dashboardArsip") ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard Arsip
+                    </a>
                     <div class="sb-sidenav-menu-heading">Fitur</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><img src="assets\img\icon-mail.svg" width="25px" alt=""></div>
@@ -26,6 +30,13 @@
                             <a class="nav-link" href="<?= base_url("/SuratMasuk/tabelDisposisi") ?>"> Disposisi</a>
                         </nav>
                     </div>
+
+                    <a class="nav-link" href="<?= base_url("/Arsip") ?>">
+                        <div class="sb-nav-link-icon">
+                            <img src="assets\img\icon-archive.png" width="25px" alt="">
+                        </div>
+                        Arsip
+                    </a>
 
                     <div class="sb-sidenav-menu-heading">Addons</div>
                     <a class="nav-link" href="charts.html">

@@ -50,9 +50,7 @@ class BerandaSurat extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
-            'isi_ringkas' => "-",
             'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' =>"-",
             'jenis_surat' => 'Surat Masuk',
             'file' =>  $namaFile,
         ];
@@ -71,7 +69,6 @@ class BerandaSurat extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_keluar' => $this->request->getVar('tanggal_keluar'),
-            'isi_ringkas' => "-",
             'jenis_surat' => 'Surat Keluar',
             'file' => $namaFile,
         ];
@@ -92,6 +89,8 @@ class BerandaSurat extends BaseController
             'tanggal_selesai' => $this->request->getVar('tanggal_selesai'),
             'beban_biaya' => $this->request->getVar('beban_biaya'),
             'tgl_rilis' => $this->request->getVar('tgl_rilis'),
+            'alat_angkut' => $this->request->getVar('alat_angkut'),
+
             'jenis_surat' => "Tugas",
             'file' => $namaFile,
         ];

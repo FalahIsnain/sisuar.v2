@@ -2,16 +2,12 @@
 
 namespace App\Controllers;
 
-use App\Models\SuratKeluarModels;
 use App\Models\SuratMasukModels;
-use App\Models\SuratTugasModels;
 use App\Models\DisposisiModels;
 
 class SuratMasuk extends BaseController
 {
     protected $SuratMasukModels;
-    protected $SuratKeluarModels;
-    protected $SuratTugasModels;
     protected $DisposisiModels;
 
     public function __construct()
@@ -22,14 +18,9 @@ class SuratMasuk extends BaseController
 
     public function index()
     {
-        $id = $this->request->uri->getSegment(2);
         helper(['form', 'url']);
-        $jumlahRecord = $this->SuratMasukModels->where('id_surat', $id)->countAllResults();
 
         $data = [
-            'suratMasukWrn' => '#F6F3A7',
-            'suratKeluarWrn' => '#F6C523',
-            'suratTugasWrn' => '#228C7B',
             'title' => 'SISUAR',
             'suratmasuk' => $this->SuratMasukModels->findAll(),
             'validation' => \Config\Services::validation(),
@@ -50,14 +41,12 @@ class SuratMasuk extends BaseController
             'tujuan_surat' => $this->request->getVar('tujuan_surat'),
             'perihal' => $this->request->getVar('perihal'),
             'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
-            'isi_ringkas' => "-",
             'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' => $this->request->getVar('alasan'),
             'jenis_surat' => 'Masuk',
             'file' =>  $namaFile,
         ];
-        session()->setFlashdata('pesan', 'Berhasil Di Tambahkan');
         $this->SuratMasukModels->save($dataSuratMasuk);
+        session()->setFlashdata('pesan', 'Berhasil Di Tambahkan');
         return redirect()->to(base_url('/SuratMasuk'));
     }
 
@@ -96,7 +85,6 @@ class SuratMasuk extends BaseController
             'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
             'isi_ringkas' => $this->request->getVar('isi_ringkas'),
             'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' => "-",
             'jenis_surat' => 'Masuk',
             'file' => $namaFile,
         ]);

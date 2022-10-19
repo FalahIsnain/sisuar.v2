@@ -22,9 +22,9 @@ class SuratTugas extends BaseController
     public function index()
     {
         $data = [
-            'suratMasukWrn'=>'#F6F3A7',
-            'suratKeluarWrn'=>'#F6C523',
-            'suratTugasWrn'=>'#228C7B',
+            'suratMasukWrn' => '#F6F3A7',
+            'suratKeluarWrn' => '#F6C523',
+            'suratTugasWrn' => '#228C7B',
             'title' => 'SISUAR',
             'surattugas' => $this->SuratTugasModels->findAll(),
             'jumlahSuratMasuk' => $this->SuratMasukModels->hitungSuratMasuk(),
@@ -52,6 +52,7 @@ class SuratTugas extends BaseController
             'file' => $namaFile,
         ];
         $this->SuratTugasModels->save($dataSuratTugas);
+        session()->setFlashdata('pesan', 'data berhasil di tambah');
         return redirect()->to(base_url('/SuratTugas'));
     }
 
@@ -81,7 +82,7 @@ class SuratTugas extends BaseController
             $file->move('asset/pdf', $namaFile);
             unlink('asset/pdf/' . $this->request->getVar('fileLama'));
         };
-        
+
         $this->SuratTugasModels->update($id_surat, [
             'no_surat' => $this->request->getVar('no_surat'),
             'keperluan' => $this->request->getVar('keperluan'),

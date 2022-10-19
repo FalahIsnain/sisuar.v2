@@ -34,7 +34,6 @@
                         <th>No surat</th>
                         <th>Tujuan Surat</th>
                         <th>Perihal</th>
-                        <!-- <th>Isi Ringkas</th> -->
                         <th>Tanggal Keluar</th>
                         <th>Berkas</th>
                         <th>Aksi</th>
@@ -45,7 +44,6 @@
                         <th>No surat</th>
                         <th>Tujuan Surat</th>
                         <th>Perihal</th>
-                        <!-- <th>Isi Ringkas</th> -->
                         <th>Tanggal Keluar</th>
                         <th>Berkas</th>
                         <th>Aksi</th>
@@ -57,7 +55,6 @@
                             <td><?= $sm['no_surat'] ?></td>
                             <td><?= $sm['tujuan_surat'] ?></td>
                             <td><?= $sm['perihal'] ?></td>
-                            <!-- <td><?= $sm['isi_ringkas'] ?> </td> -->
                             <?php $date = date('d-M-Y', strtotime($sm['tanggal_keluar'])) ?>
                             <td><?= $date ?></td>
                             <td>
@@ -84,7 +81,7 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color:#F7C33A;color:white ;">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Surat Keluar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -120,14 +117,6 @@
                             Tanggal Masuk Tidak Boleh Kosong!
                         </div>
                     </div>
-                    <!-- <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Isi Ringkas</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
-                        <div class="invalid-feedback">
-                            Isi Ringkas Tidak Boleh Kosong!
-                        </div>
-                    </div> -->
-
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
                         <input type="file" class="form-control" aria-label="file example" name="file" required>
@@ -153,7 +142,7 @@
     <div class="modal fade" id="formedit-<?= $sm['id_surat'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="background-color:#F7C33A;color:white ;">
                     <h5 class="modal-title" id="staticBackdropLabel">Edit Surat Keluar</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -189,13 +178,6 @@
                                 Tanggal Masuk Tidak Boleh Kosong!
                             </div>
                         </div>
-                        <!-- <div class="col-12">
-                            <label for="validationCustom02" class="form-label">Isi Ringkas</label>
-                            <input type="text" class="form-control" id="validationCustom02" value="<?= $sm['isi_ringkas'] ?>" id="isi_ringkas" name="isi_ringkas" required>
-                            <div class="invalid-feedback">
-                                Isi Ringkas Tidak Boleh Kosong!
-                            </div>
-                        </div> -->
 
                         <div class="col-12">
                             <label for="validationCustom02" class="costum-file-label"><?= $sm['file'] ?></label>

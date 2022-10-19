@@ -88,7 +88,6 @@
                         <th>Tujuan</th>
                         <th>Perihal</th>
                         <th>Tanggal</th>
-                        <!-- <th>Isi Ringkas</th> -->
                         <th>Berkas</th>
                     </tr>
                 </thead>
@@ -99,7 +98,6 @@
                         <th>Tujuan</th>
                         <th>Perihal</th>
                         <th>Tanggal</th>
-                        <!-- <th>Isi Ringkas</th> -->
                         <th>Berkas</th>
                     </tr>
                 </tfoot>
@@ -112,7 +110,6 @@
                             <td><?= $sm['perihal'] ?></td>
                             <?php $date = date('d-m-Y', strtotime($sm['tanggal_masuk'])) ?>
                             <td><?= $date ?></td>
-                            <!-- <td><?= $sm['isi_ringkas'] ?></td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -126,7 +123,6 @@
                             <td><?= $sm['perihal'] ?></td>
                             <?php $date = date('d-m-Y', strtotime($sm['tanggal_keluar'])) ?>
                             <td><?= $date ?></td>
-                            <!-- <td><?= $sm['isi_ringkas'] ?> </td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -141,7 +137,6 @@
                             <td><?= $sm['tempat_tujuan'] ?></td>
                             <td><?= $sm['keperluan'] ?></td>
                             <td><?= $dateMulai ?> s/d <?= $dateSelesai ?></td>
-                            <!-- <td><?= $sm['beban_biaya'] ?> </td> -->
                             <td>
                                 <a href="<?= base_url('asset/pdf/' . $sm['file']) ?>"><?= $sm['file'] ?> </a>
                             </td>
@@ -159,7 +154,7 @@
 <div class="modal fade" id="masuk" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color:#E56E6E;color:white ;">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Surat Masuk</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -201,21 +196,7 @@
                             Mohon Diisi!
                         </div>
                     </div>
-                    <!-- <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Isi Ringkas</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
-                        <div class="invalid-feedback">
-                            Mohon Diisi!
-                        </div>
-                    </div> -->
 
-                    <!-- <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Alasan</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" id="alasan" name="alasan" required>
-                        <div class="invalid-feedback">
-                            Mohon Diisi!
-                        </div>
-                    </div> -->
                     <div class="col-md-4">
                         <label for="validationCustom04" class="form-label">Disposisi</label>
                         <select class="form-select" id="validationCustom04" id="ket_surat" name="ket_surat" required>
@@ -250,7 +231,7 @@
 <div class="modal fade" id="keluar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color:#F7C33A;color:white ;">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Surat Keluar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -286,13 +267,7 @@
                             Mohon Diisi!
                         </div>
                     </div>
-                    <!-- <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Isi Ringkas</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" id="isi_ringkas" name="isi_ringkas" required>
-                        <div class="invalid-feedback">
-                            Mohon Diisi!
-                        </div>
-                    </div> -->
+
                     <div class="col-12">
                         <label for="validationCustom02" class="form-label">file</label>
                         <input type="file" class="form-control" aria-label="file example" name="file" required>
@@ -315,7 +290,7 @@
 <div class="modal fade" id="tugas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color:#60AEB2;color:white ;">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Surat Tugas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -357,8 +332,15 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Rincian Biaya</label>
+                        <label for="validationCustom02" class="form-label">Pembebanan Biaya</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" id="beban_biaya" name="beban_biaya" required>
+                        <div class="invalid-feedback">
+                            Mohon Diisi!
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="validationCustom02" class="form-label">Alat angkut yang digunakan</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="" id="alat_angkut" name="alat_angkut" required>
                         <div class="invalid-feedback">
                             Mohon Diisi!
                         </div>
