@@ -49,7 +49,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
-                    Area Chart Example
+                    Area Chart 
                 </div>
                 <div class="card-body"><canvas id="suratdashboard" width="100%" height="40"></canvas></div>
             </div>
@@ -58,7 +58,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
-                    Bar Chart Example
+                    Bar Chart 
                 </div>
                 <div class="card-body"><canvas id="suratdashboard2" width="100%" height="40"></canvas></div>
             </div>
@@ -67,7 +67,7 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            DataTable Example
+            DataTable 
         </div>
         <div class="card-body">
             <table id="datatablesSimple">

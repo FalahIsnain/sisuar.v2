@@ -26,17 +26,7 @@ class Arsip extends BaseController
         ];
         return view('arsip/indexarsip.php', $data);
     }
-
-    public function dashboardArsip()
-    {
-        helper(['form', 'url']);
-
-        $data = [
-            'title' => 'SISUAR',
-            'arsip' => $this->ArsipModels->getArsip(),
-        ];
-        return view('arsip/dashboardarsip.php', $data);
-    }
+    
 
     public function tambahArsip()
     {

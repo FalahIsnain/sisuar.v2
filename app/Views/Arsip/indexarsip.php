@@ -12,7 +12,7 @@
         </div>
     <?php endif; ?>
     <div class="card mb-4">
-        <div class="card-header" style="background-color:#E56E6E;color:white ;">
+        <div class="card-header" style="background-color:#8FBDD3;color:white ;">
             <i class="fas fa-table me-1"></i>
             Data Arsip
         </div>
@@ -25,7 +25,7 @@
             </a>
             <table id="datatablesSimple" class="table table-hover">
                 <thead>
-                    <tr style="background-color:#E56E6E;color:white ;">
+                    <tr style="background-color:#8FBDD3;color:white ;">
                         <th>Nama</th>
                         <th>Tanggal Arsip</th>
                         <th>Keterangan</th>
@@ -78,8 +78,8 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Arsip</h5>
+            <div class="modal-header"style="background-color:#8FBDD3;color:white ;">
+                <h5 class="modal-title" id="staticBackdropLabel" >Tambah Arsip</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

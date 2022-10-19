@@ -39,7 +39,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/', 'Home::index');
 $routes->get('/BerandaSurat', 'BerandaSurat::index');
 $routes->get('/Arsip', 'Arsip::index');
-$routes->get('/Arsip/dashboardArsip', 'Arsip::dashboardArsip');
+$routes->get('/BerandaArsip', 'BerandaArsip::index');
 $routes->get('/SuratMasuk', 'SuratMasuk::index');
 $routes->get('/SuratKeluar', 'SuratKeluar::index');
 $routes->get('/SuratTugas', 'SuratTugas::index');

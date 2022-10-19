@@ -16,12 +16,6 @@
             Data Surat Disposisi
         </div>
         <div class="card-body">
-            <!-- <button type="button" class="btn btn-primary mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Tambah Surat
-                </button>
-                <a href="<?= base_url('/SuratMasuk/formfilter') ?>">
-                    <button class="btn btn-primary mt-2 mb-2" type="submit">Filter</button>
-                </a> -->
             <table id="datatablesSimple" class="table table-hover">
                 <thead>
                     <tr style="background-color:#A8876F;color:white ;">
@@ -54,7 +48,6 @@
                             <td><?= $sm['asal_surat'] ?></td>
                             <td><?= $sm['tujuan_surat'] ?></td>
                             <td><?= $sm['perihal'] ?></td>
-                            <!-- <td><?= $sm['isi_ringkas'] ?></td> -->
                             <?php $date = date('d-M-Y', strtotime($sm['tanggal_masuk'])) ?>
                             <td><?= $date ?></td>
                             <td>

@@ -3,6 +3,9 @@
 
 <div class="container-fluid px-4">
     <h1 class="mt-4">Dashboard Arsip</h1>
+    <a href="<?= base_url('/Arsip') ?>">
+        <button class="btn btn-primary mt-2 mb-2" type="submit"><i class="fas fa-plus"></i> Tambah Arsip</button>
+    </a>
     <?php $i = 1 ?>
     <?php foreach ($arsip as $sm) : ?>
 
