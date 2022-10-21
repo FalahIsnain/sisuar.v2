@@ -56,13 +56,11 @@ class SuratMasuk extends BaseController
         $id = $this->request->uri->getSegment(2);
         //Cari File berdasarkan Id
         $hapusFile = $this->SuratMasukModels->find($id);
-
         // Hapus file
         unlink('asset/pdf/' . $hapusFile['file']);
         $this->SuratMasukModels->delete($id);
         session()->setFlashdata('pesan', 'data berhasil di hapus');
         return redirect()->to(base_url('/SuratMasuk'));
-        echo json_encode(array("status" => TRUE));
     }
 
     public function edit($id_surat)

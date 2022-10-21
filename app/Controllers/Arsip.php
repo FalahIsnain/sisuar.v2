@@ -38,7 +38,7 @@ class Arsip extends BaseController
             'nama_arsip' => $this->request->getVar('nama_arsip'),
             'tgl_arsip' => $this->request->getVar('tgl_arsip'),
             'ket_arsip' => $this->request->getVar('ket_arsip'),
-            'id_jenis ' => $this->request->getVar('jenis'),
+            'id_jenis' => $this->request->getVar('jenis'),
             'file_arsip' =>  $namaFile,
         ];
         $this->ArsipModels->save($dataArsip);
@@ -46,24 +46,23 @@ class Arsip extends BaseController
         return redirect()->to(base_url('/Arsip'));
     }
 
-    public function hapusSuratMasuk()
+    public function hapusArsip()
     {
         helper(['form', 'url']);
         $id = $this->request->uri->getSegment(2);
-        $hapusFile = $this->SuratMasukModels->find($id);
+        $hapusFile = $this->ArsipModels->find($id);
 
         // Hapus file
-        unlink('asset/pdf/' . $hapusFile['file']);
-        $this->SuratMasukModels->delete($id);
+        unlink('asset/pdf/' . $hapusFile['file_arsip']);
+        $this->ArsipModels->delete($id);
         session()->setFlashdata('pesan', 'data berhasil di hapus');
-        return redirect()->to(base_url('/SuratMasuk'));
-        echo json_encode(array("status" => TRUE));
+        return redirect()->to(base_url('/Arsip'));
     }
 
-    public function edit($id_surat)
+    public function edit($id_arsip)
     {
 
-        $file = $this->request->getFile('file');
+        $file = $this->request->getFile('file_arsip');
         // cek File 
         if ($file->getError() == 4) {
             $namaFile = $this->request->getVar('fileLama');
@@ -72,20 +71,15 @@ class Arsip extends BaseController
             $file->move('asset/pdf', $namaFile);
             unlink('asset/pdf/' . $this->request->getVar('fileLama'));
         }
-        $this->SuratMasukModels->update($id_surat, [
-            'no_surat' => $this->request->getVar('no_surat'),
-            'asal_surat' => $this->request->getVar('asal_surat'),
-            'tujuan_surat' => $this->request->getVar('tujuan_surat'),
-            'perihal' => $this->request->getVar('perihal'),
-            'tanggal_masuk' => $this->request->getVar('tanggal_masuk'),
-            'isi_ringkas' => $this->request->getVar('isi_ringkas'),
-            'ket_surat' => $this->request->getVar('ket_surat'),
-            'alasan' => "-",
-            'jenis_surat' => 'Masuk',
-            'file' => $namaFile,
+        $this->ArsipModels->update($id_arsip, [
+            'nama_arsip' => $this->request->getVar('nama_arsip'),
+            'tgl_arsip' => $this->request->getVar('tgl_arsip'),
+            'ket_arsip' => $this->request->getVar('ket_arsip'),
+            'id_jenis' => $this->request->getVar('jenis'),
+            'file_arsip' =>  $namaFile,
         ]);
 
-        return redirect()->to(base_url('/SuratMasuk'));
+        return redirect()->to(base_url('/Arsip'));
     }
 
 

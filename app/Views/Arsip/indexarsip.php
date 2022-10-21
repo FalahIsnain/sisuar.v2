@@ -74,12 +74,11 @@
 </div>
 
 <!-- Modal -->
-
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header"style="background-color:#8FBDD3;color:white ;">
-                <h5 class="modal-title" id="staticBackdropLabel" >Tambah Arsip</h5>
+            <div class="modal-header" style="background-color:#8FBDD3;color:white ;">
+                <h5 class="modal-title" id="staticBackdropLabel">Tambah Arsip</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -121,13 +120,6 @@
                             Silahkan Pilih Jenis Surat
                         </div>
                     </div>
-                    <!-- <div class="col-12">
-                        <label for="validationCustom02" class="form-label">Alasan</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" id="alasan" name="alasan" required>
-                        <div class="invalid-feedback">
-                            Alasan Tidak Boleh Kosong!
-                        </div>
-                    </div> -->
 
                     <div class="col-12">
                         <label for="formFile" class="form-label">File</label>
@@ -146,6 +138,78 @@
     </div>
 </div>
 
+<!-- Modal EDIT-->
+<?php foreach ($arsip as $sm) : ?>
+    <div class="modal fade" id="formedit-<?= $sm['id_arsip'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#8FBDD3;color:white ;">
+                    <h5 class="modal-title" id="staticBackdropLabel">Edit Arsip</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url('/Arsip/edit/' . $sm['id_arsip']) ?>" class="row g-3 needs-validation" method="post" enctype="multipart/form-data" novalidate>
+                        <?= csrf_field(); ?>
+                        <input type="hidden" name="fileLama" value="<?= $sm['file_arsip']; ?>"> </input>
+                        <div class="col-12">
+                            <label for="validationCustom01" class="form-label">Nama Arsip</label>
+
+                            <input type="text" class="form-control" id="validationCustom01" value="<?= $sm['nama_arsip'] ?>" id="nama_arsip" name="nama_arsip" required>
+                            <div class="invalid-feedback">
+                                Silahkan Isi No Surat!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="validationCustom02" class="form-label">Tanggal Masuk</label>
+                            <input type="date" class="form-control" id="validationCustom02" value="<?= $sm['tgl_arsip'] ?>" id="tgl_arsip" name="tgl_arsip" required>
+                            <div class="invalid-feedback">
+                                Tanggal Masuk Tidak Boleh Kosong!
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="validationCustom01" class="form-label">Keterangan Arsip</label>
+                            <input type="text" class="form-control" id="validationCustom01" value="<?= $sm['ket_arsip'] ?>" id="ket_arsip" name="ket_arsip" required>
+                            <div class="invalid-feedback">
+                                Silahkan Isi Keterangan Surat!
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="validationCustom04" class="form-label">Jenis</label>
+                            <select class="form-select" id="validationCustom04" id="jenis" name="jenis" required>
+                                <option selected disabled value="">Choose...</option>
+                                <?php
+                                foreach ($jenis as $row) {
+                                ?>
+                                    <option value="<?= $row['id_jenis'] ?>" <?= ($row['id_jenis'] == $sm['id_jenis']) ? 'selected' : ''; ?>><?= $row['nama_jenis'] ?></option>
+
+                                <?php } ?>
+
+                            </select>
+                            <div class="invalid-feedback">
+                                Silahkan Pilih Jenis Surat
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="validationCustom02" class="costum-file-label"><?= $sm['file_arsip'] ?></label>
+                            <input class="form-control" type="file" id="formFile" name="file_arsip" value="<?= $sm['file_arsip'] ?>">
+                            <div class="invalid-feedback">
+                                File Tidak Boleh Kosong!
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Ubah</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endforeach; ?>
 
 
 <?= $this->endSection(); ?>

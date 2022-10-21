@@ -50,11 +50,11 @@ $routes->add('/BerandaSurat/(:any)', 'BerandaSurat::$1');
 $routes->delete('/SuratMasuk/(:num)', 'SuratMasuk::hapusSuratMasuk/$1');
 $routes->delete('/SuratKeluar/(:num)', 'SuratKeluar::hapusSuratKeluar/$1');
 $routes->delete('/SuratTugas/(:num)', 'SuratTugas::hapusSuratTugas/$1');
+$routes->delete('/Arsip/(:num)', 'Arsip::hapusArsip/$1');
 $routes->add('/SuratMasuk/edit/(:any)', 'SuratMasuk::edit/$1');
 $routes->add('/SuratKeluar/edit/(:any)', 'SuratKeluar::edit/$1');
 $routes->add('/SuratTugas/edit/(:any)', 'SuratTugas::edit/$1');
 $routes->add('/SuratMasuk/disposisi/(:any)', 'SuratMasuk::disposisi/$1');
-$routes->get('/Arsip', 'Arsip::index');
 $routes->add('/Arsip/(:any)', 'Arsip::$1');
 /*
  * --------------------------------------------------------------------
