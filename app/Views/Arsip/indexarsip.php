@@ -45,6 +45,7 @@
                     </tr>
                 </tfoot>
                 <tbody>
+                    <?php $i = 1 ?>
                     <?php foreach ($arsip as $sm) : ?>
                         <tr>
                             <td><?= $sm['nama_arsip'] ?></td>
@@ -53,7 +54,29 @@
                             <td><?= $sm['ket_arsip'] ?></td>
                             <td><?= $sm['nama_jenis'] ?></td>
                             <td>
-                                <a href="<?= base_url('asset/pdf/' . $sm['file_arsip']) ?>"><?= $sm['file_arsip'] ?> </a>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fileModal<?= $i ?>">
+                                    Lihat file
+                                </button>
+                                <div class="modal fade" id="fileModal<?= $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $sm['file_arsip'] ?></h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" width="1220" height="400" src="asset/pdf/<?= $sm['file_arsip'] ?>"></iframe>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php $i++ ?>
+                                <!-- <a href="<?= base_url('asset/pdf/' . $sm['file_arsip']) ?>"><?= $sm['file_arsip'] ?> </a> -->
                             </td>
                             <td>
                                 <button type="button " class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#formedit-<?= $sm['id_arsip'] ?>">
@@ -106,7 +129,7 @@
                             Silahkan Isi Keterangan Surat!
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-md-6">
                         <label for="validationCustom04" class="form-label">Jenis</label>
                         <select class="form-select" id="validationCustom04" id="jenis" name="jenis" required>
                             <option selected disabled value="">Choose...</option>
@@ -119,6 +142,12 @@
                         <div class="invalid-feedback">
                             Silahkan Pilih Jenis Surat
                         </div>
+                    </div>
+
+                    <div class="col-md-6 mt-5">
+                        <a href="<?= base_url('/Arsip/indexJenis') ?>">
+                            <button type="button" class="btn btn-primary">Jenis</button>
+                        </a>
                     </div>
 
                     <div class="col-12">

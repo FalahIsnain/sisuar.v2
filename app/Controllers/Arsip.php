@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ArsipModels;
+use App\Models\JenisModels;
 
 class Arsip extends BaseController
 {
@@ -11,6 +12,7 @@ class Arsip extends BaseController
     public function __construct()
     {
         $this->ArsipModels = new ArsipModels();
+        $this->JenisModels = new JenisModels();
     }
 
     public function index()
@@ -26,7 +28,7 @@ class Arsip extends BaseController
         ];
         return view('arsip/indexarsip.php', $data);
     }
-    
+
 
     public function tambahArsip()
     {
@@ -78,7 +80,7 @@ class Arsip extends BaseController
             'id_jenis' => $this->request->getVar('jenis'),
             'file_arsip' =>  $namaFile,
         ]);
-
+        session()->setFlashdata('pesan', 'data berhasil di edit');
         return redirect()->to(base_url('/Arsip'));
     }
 
@@ -111,49 +113,55 @@ class Arsip extends BaseController
         return view('surat/suratmasuk/cetakfiltersuratmasuk.php', $data);
     }
 
-    public function disposisi($id_surat)
-    {
-
-        helper(['form', 'url']);
-        $data = [
-            'suratMasukWrn' => '#F6F3A7',
-            'suratKeluarWrn' => '#F6C523',
-            'suratTugasWrn' => '#228C7B',
-            'title' => 'SISUAR',
-            'detailSurat' => $this->SuratMasukModels->getOne($id_surat),
-            'disposisiCetak' => $this->DisposisiModels->getDisposisi($id_surat),
-            'validation' => \Config\Services::validation(),
-        ];
-        return view('surat/suratmasuk/disposisi.php', $data);
-    }
-
-    public function tambahDisposisi()
+    public function indexJenis()
     {
         helper(['form', 'url']);
-        $id_surat =  $this->request->getPost('id_surat');
-        $size_arr = $this->request->getPost('arrDisposisi[]');
-        $disposisiString = implode(" \n ", $size_arr);
 
-        $dataDisposisi = [
-            'id_surat' => $this->request->getPost('id_surat'),
-            'dari' => $this->request->getPost('dari'),
-            'kepada' => $this->request->getPost('kepada'),
-            'ket' => $this->request->getPost('keterangan'),
-            'disposisi' => $disposisiString
-        ];
-        session()->setFlashdata('pesan', 'Berhasil Di Tambahkan');
-        $this->DisposisiModels->save($dataDisposisi);
-        return redirect()->to(base_url('/SuratMasuk/disposisi/' . $id_surat));
-    }
-    public function tabelDisposisi()
-    {
-        helper(['form', 'url']);
         $data = [
             'title' => 'SISUAR',
-            'suratdisposisi' => $this->SuratMasukModels->where('ket_surat', 'Ya')->findAll(),
+            'jenis' => $this->ArsipModels->getJenis(),
             'validation' => \Config\Services::validation(),
+
         ];
+        return view('arsip/indexjenis.php', $data);
+    }
+
+    public function tambahJenis()
+    {
+        $datajenis = [
+            'nama_jenis' => $this->request->getVar('nama_jenis'),
+        ];
+        $this->JenisModels->save($datajenis);
         session()->setFlashdata('pesan', 'Berhasil Di Tambahkan');
-        return view('surat/suratmasuk/indexsuratdisposisi.php', $data);
+        return redirect()->to(base_url('/Arsip/indexJenis'));
+    }
+
+    public function hapusJenis()
+    {
+        try {
+            $id = $this->request->uri->getSegment(3);
+            $this->JenisModels->delete($id);
+            session()->setFlashdata('pesan', 'data berhasil di hapus');
+            return redirect()->to(base_url('/Arsip/indexJenis'));
+        } catch (\Exception $e) {
+            session()->setFlashdata('pesan', 'jenis masih ada, pastikan sudah habis');
+            return redirect()->to(base_url('/Arsip/indexJenis'));
+            die($e->getMessage());
+        }
+    }
+
+    public function editJenis($id_jenis)
+    {
+        try {
+            $this->JenisModels->update($id_jenis, [
+                'nama_jenis' => $this->request->getVar('nama_jenis'),
+            ]);
+            session()->setFlashdata('pesan', 'data berhasil di edit');
+            return redirect()->to(base_url('/Arsip/indexJenis'));
+        } catch (\Exception $e) {
+            session()->setFlashdata('pesan', 'jenis masih ada, pastikan sudah habis');
+            return redirect()->to(base_url('/Arsip/indexJenis'));
+            die($e->getMessage());
+        }
     }
 }

@@ -8,7 +8,6 @@
     </a>
     <?php $i = 1 ?>
     <?php foreach ($arsip as $sm) : ?>
-
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading<?= $i ?>">
@@ -20,7 +19,7 @@
                     <div class="accordion-body">
                         <!-- 16:9 aspect ratio -->
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" width="1220" height="400" src="asset/pdf/KHS.pdf"></iframe>
+                            <iframe class="embed-responsive-item" width="1220" height="400" src="asset/pdf/<?= $sm['file_arsip'] ?>"></iframe>
                         </div>
                     </div>
                 </div>
