@@ -16,6 +16,11 @@
             <?= session()->getFlashData('pesan'); ?>
         </div>
     <?php endif; ?>
+    <?php if (session()->getFlashData('err')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashData('err'); ?>
+        </div>
+    <?php endif; ?>
     <div class="card mb-4">
         <div class="card-header" style="background-color:#F7C33A;color:white ;">
             <i class="fas fa-table me-1"></i>
@@ -149,7 +154,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>
 

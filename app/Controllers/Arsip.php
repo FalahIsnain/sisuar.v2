@@ -34,8 +34,8 @@ class Arsip extends BaseController
     {
         helper(['form', 'url']);
         $fileUp = $this->request->getFile('file_arsip');
+        $fileUp->move('asset/pdf');
         $namaFile = $fileUp->getName();
-        $fileUp->move('asset/pdf', $namaFile);
         $dataArsip = [
             'nama_arsip' => $this->request->getVar('nama_arsip'),
             'tgl_arsip' => $this->request->getVar('tgl_arsip'),
@@ -69,8 +69,8 @@ class Arsip extends BaseController
         if ($file->getError() == 4) {
             $namaFile = $this->request->getVar('fileLama');
         } else {
+            $file->move('asset/pdf');
             $namaFile = $file->getName();
-            $file->move('asset/pdf', $namaFile);
             unlink('asset/pdf/' . $this->request->getVar('fileLama'));
         }
         $this->ArsipModels->update($id_arsip, [
@@ -96,21 +96,22 @@ class Arsip extends BaseController
             'validation' => \Config\Services::validation(),
 
         ];
-        return view('surat/suratmasuk/filtersuratmasuk.php', $data);
+        return view('arsip/filterarsip.php', $data);
     }
 
-    public function cetakFilterSuratMasuk()
+    public function cetakFilterArsip()
     {
         $tglmin = $this->request->getPost('tanggal_min');
         $tglmax = $this->request->getPost('tanggal_max');
 
         $data = [
             'title' => 'Filter Surat Masuk',
-            'dataFilter' => $this->SuratMasukModels->filterDate($tglmin, $tglmax),
+            'dataFilter' => $this->ArsipModels->filterDate($tglmin, $tglmax),
             'tanggalMin' => date('d-M-Y', strtotime($tglmin)),
             'tanggalMax' => date('d-M-Y', strtotime($tglmax)),
         ];
-        return view('surat/suratmasuk/cetakfiltersuratmasuk.php', $data);
+        
+        return view('arsip/cetakfilterarsip.php', $data);
     }
 
     public function indexJenis()

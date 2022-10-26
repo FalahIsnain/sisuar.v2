@@ -36,24 +36,44 @@ class SuratTugas extends BaseController
 
     public function tambahSuratTugas()
     {
-        $file = $this->request->getFile('file');
-        $namaFile = $file->getName();
-        $file->move('asset/pdf', $namaFile);
-        $dataSuratTugas = [
-            'no_surat' => $this->request->getVar('no_surat'),
-            'keperluan' => $this->request->getVar('keperluan'),
-            'tempat_tujuan' => $this->request->getVar('tempat_tujuan'),
-            'tanggal_mulai' => $this->request->getVar('tanggal_mulai'),
-            'tanggal_selesai' => $this->request->getVar('tanggal_selesai'),
-            'beban_biaya' => $this->request->getVar('beban_biaya'),
-            'alat_angkut' => $this->request->getVar('alat_angkut'),
-            'tgl_rilis' => $this->request->getVar('tgl_rilis'),
-            'jenis_surat' => "Tugas",
-            'file' => $namaFile,
-        ];
-        $this->SuratTugasModels->save($dataSuratTugas);
-        session()->setFlashdata('pesan', 'data berhasil di tambah');
-        return redirect()->to(base_url('/SuratTugas'));
+
+        if (isset($_POST['tambah'])) {
+            $val = $this->validate([
+                'no_surat' => [
+                    'rules' => 'is_unique[surat_tugas.no_surat]',
+                    'errors' => [
+                        'is_unique'    => 'No Surat sudah terdata !!!'
+                    ]
+                ],
+
+            ]);
+
+            if (!$val) {
+                session()->setFlashdata('err', \Config\Services::validation()->listErrors());
+                return redirect()->to(base_url('/SuratTugas'));
+            } else {
+                $file = $this->request->getFile('file');
+                $file->move('asset/pdf');
+                $namaFile = $file->getName();
+                $dataSuratTugas = [
+                    'no_surat' => $this->request->getVar('no_surat'),
+                    'keperluan' => $this->request->getVar('keperluan'),
+                    'tempat_tujuan' => $this->request->getVar('tempat_tujuan'),
+                    'tanggal_mulai' => $this->request->getVar('tanggal_mulai'),
+                    'tanggal_selesai' => $this->request->getVar('tanggal_selesai'),
+                    'beban_biaya' => $this->request->getVar('beban_biaya'),
+                    'alat_angkut' => $this->request->getVar('alat_angkut'),
+                    'tgl_rilis' => $this->request->getVar('tgl_rilis'),
+                    'jenis_surat' => "Tugas",
+                    'file' => $namaFile,
+                ];
+                $this->SuratTugasModels->save($dataSuratTugas);
+                session()->setFlashdata('pesan', 'data berhasil di tambah');
+                return redirect()->to(base_url('/SuratTugas'));
+            }
+        } else {
+            return redirect()->to(base_url('/SuratTugas'));
+        }
     }
 
     public function hapusSuratTugas()
@@ -78,8 +98,8 @@ class SuratTugas extends BaseController
         if ($file->getError() == 4) {
             $namaFile = $this->request->getVar('fileLama');
         } else {
+            $file->move('asset/pdf');
             $namaFile = $file->getName();
-            $file->move('asset/pdf', $namaFile);
             unlink('asset/pdf/' . $this->request->getVar('fileLama'));
         };
 

@@ -36,6 +36,7 @@ class ArsipModels extends Model
     }
     public function filterDate($tglmin, $tglmax)
     {
-        return $this->table('arsip')->where('tgl_arsip >=', $tglmin)->where('tgl_arsip <=', $tglmax)->get();
+        return $this->table('arsip')
+            ->join('jenis_arsip', 'jenis_arsip.id_jenis=arsip.id_jenis')->where('tgl_arsip >=', $tglmin)->where('tgl_arsip <=', $tglmax)->get();
     }
 }

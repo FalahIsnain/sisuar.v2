@@ -16,6 +16,11 @@
             <?= session()->getFlashData('pesan'); ?>
         </div>
     <?php endif; ?>
+    <?php if (session()->getFlashData('err')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashData('err'); ?>
+        </div>
+    <?php endif; ?>
     <div class="card mb-4">
         <div class="card-header" style="background-color:#60AEB2;color:white ;">
             <i class="fas fa-table me-1"></i>
@@ -28,7 +33,7 @@
             <a href="<?= base_url('/SuratTugas/formfilter') ?>">
                 <button class="btn btn-primary mt-2 mb-2" type="submit">Filter</button>
             </a>
-            <table id="datatablesSimple">
+            <table id="datatablesSimple" class="table table-hover">
                 <thead>
                     <tr style="background-color:#60AEB2;color:white ;">
                         <th>No surat</th>
@@ -191,7 +196,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>
             </div>

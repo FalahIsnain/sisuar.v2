@@ -42,8 +42,8 @@ class BerandaSurat extends BaseController
     public function tambahSuratMasukDashboard()
     {
         $file = $this->request->getFile('file');
+        $file->move('asset/pdf');
         $namaFile = $file->getName();
-        $file->move('asset/pdf', $namaFile);
         $dataSuratMasuk = [
             'no_surat' => $this->request->getVar('no_surat'),
             'asal_surat' => $this->request->getVar('asal_surat'),
@@ -61,8 +61,8 @@ class BerandaSurat extends BaseController
     public function tambahSuratKeluarDashboard()
     {
         $file = $this->request->getFile('file');
+        $file->move('asset/pdf');
         $namaFile = $file->getName();
-        $file->move('asset/pdf', $namaFile);
         $dataSuratKeluar = [
 
             'no_surat' => $this->request->getVar('no_surat'),
@@ -78,8 +78,8 @@ class BerandaSurat extends BaseController
     public function tambahSuratTugasDashboard()
     {
         $file = $this->request->getFile('file');
+        $file->move('asset/pdf');
         $namaFile = $file->getName();
-        $file->move('asset/pdf', $namaFile);
         $dataSuratTugas = [
 
             'no_surat' => $this->request->getVar('no_surat'),

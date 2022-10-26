@@ -20,7 +20,7 @@
             <button type="button" class="btn btn-primary mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Tambah Arsip
             </button>
-            <a href="<?= base_url('/arsip/formfilter') ?>">
+            <a href="<?= base_url('/Arsip/formfilter') ?>">
                 <button class="btn btn-primary mt-2 mb-2" type="submit">Filter</button>
             </a>
             <table id="datatablesSimple" class="table table-hover">

@@ -26,19 +26,37 @@ class SuratKeluar extends BaseController
     public function tambahSuratKeluar()
     {
 
-        $file = $this->request->getFile('file');
-        $namaFile = $file->getName();
-        $file->move('asset/pdf', $namaFile);
-        $dataSuratKeluar = [
-            'no_surat' => $this->request->getVar('no_surat'),
-            'tujuan_surat' => $this->request->getVar('tujuan_surat'),
-            'perihal' => $this->request->getVar('perihal'),
-            'tanggal_keluar' => $this->request->getVar('tanggal_keluar'),
-            'jenis_surat' => 'Keluar',
-            'file' => $namaFile,
-        ];
-        $this->SuratKeluarModels->save($dataSuratKeluar);
-        return redirect()->to(base_url('/SuratKeluar'));
+        if (isset($_POST['tambah'])) {
+            $val = $this->validate([
+                'no_surat' => [
+                    'rules' => 'is_unique[surat_keluar.no_surat]',
+                    'errors' => [
+                        'is_unique'    => 'No Surat sudah terdata !!!'
+                    ]
+                ],
+
+            ]);
+            if (!$val) {
+                session()->setFlashdata('err', \Config\Services::validation()->listErrors());
+                return redirect()->to(base_url('/SuratKeluar'));
+            } else {
+                $file = $this->request->getFile('file');
+                $file->move('asset/pdf');
+                $namaFile = $file->getName();
+                $dataSuratKeluar = [
+                    'no_surat' => $this->request->getVar('no_surat'),
+                    'tujuan_surat' => $this->request->getVar('tujuan_surat'),
+                    'perihal' => $this->request->getVar('perihal'),
+                    'tanggal_keluar' => $this->request->getVar('tanggal_keluar'),
+                    'jenis_surat' => 'Keluar',
+                    'file' => $namaFile,
+                ];
+                $this->SuratKeluarModels->save($dataSuratKeluar);
+                return redirect()->to(base_url('/SuratKeluar'));
+            }
+        } else {
+            return redirect()->to(base_url('/SuratKeluar'));
+        }
     }
 
     public function hapusSuratKeluar()
@@ -61,8 +79,8 @@ class SuratKeluar extends BaseController
         if ($file->getError() == 4) {
             $namaFile = $this->request->getVar('fileLama');
         } else {
+            $file->move('asset/pdf');
             $namaFile = $file->getName();
-            $file->move('asset/pdf', $namaFile);
             unlink('asset/pdf/' . $this->request->getVar('fileLama'));
         }
         $this->SuratKeluarModels->update($id_surat, [
