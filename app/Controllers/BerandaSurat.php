@@ -22,7 +22,7 @@ class BerandaSurat extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'suratMasukWrn' => '#EC7272',
             'suratKeluarWrn' => '#FFC93C ',
             'suratTugasWrn' => '#63B4B8',

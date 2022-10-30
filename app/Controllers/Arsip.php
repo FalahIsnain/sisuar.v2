@@ -20,7 +20,7 @@ class Arsip extends BaseController
         helper(['form', 'url']);
 
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'arsip' => $this->ArsipModels->getArsip(),
             'jenis' => $this->ArsipModels->getJenis(),
             'validation' => \Config\Services::validation(),
@@ -119,7 +119,7 @@ class Arsip extends BaseController
         helper(['form', 'url']);
 
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'jenis' => $this->ArsipModels->getJenis(),
             'validation' => \Config\Services::validation(),
 

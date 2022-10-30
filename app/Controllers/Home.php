@@ -8,7 +8,7 @@ class Home extends BaseController
     {
 
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
 
         ];
 

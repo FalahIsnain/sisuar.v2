@@ -25,7 +25,7 @@ class SuratTugas extends BaseController
             'suratMasukWrn' => '#F6F3A7',
             'suratKeluarWrn' => '#F6C523',
             'suratTugasWrn' => '#228C7B',
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'surattugas' => $this->SuratTugasModels->findAll(),
             'jumlahSuratMasuk' => $this->SuratMasukModels->hitungSuratMasuk(),
             'jumlahSuratKeluar' => $this->SuratKeluarModels->hitungSuratKeluar(),
@@ -122,7 +122,7 @@ class SuratTugas extends BaseController
 
         helper(['form', 'url']);
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'jumlahSuratMasuk' => $this->SuratMasukModels->hitungSuratMasuk(),
             'jumlahSuratKeluar' => $this->SuratKeluarModels->hitungSuratKeluar(),
             'jumlahSuratTugas' => $this->SuratTugasModels->hitungSuratTugas(),

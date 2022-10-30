@@ -21,7 +21,7 @@ class SuratMasuk extends BaseController
         helper(['form', 'url']);
 
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'suratmasuk' => $this->SuratMasukModels->findAll(),
             'validation' => \Config\Services::validation(),
 
@@ -116,7 +116,7 @@ class SuratMasuk extends BaseController
 
 
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'validation' => \Config\Services::validation(),
 
         ];
@@ -175,7 +175,7 @@ class SuratMasuk extends BaseController
     {
         helper(['form', 'url']);
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'suratdisposisi' => $this->SuratMasukModels->where('ket_surat', 'Ya')->findAll(),
             'validation' => \Config\Services::validation(),
         ];

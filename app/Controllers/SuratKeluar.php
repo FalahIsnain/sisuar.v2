@@ -17,7 +17,7 @@ class SuratKeluar extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'SISUAR',
+            'title' => 'SISUAR BINKON',
             'suratkeluar' => $this->SuratKeluarModels->findAll(),
         ];
 

@@ -19,7 +19,32 @@
     </div>
 
 </div>
+<!-- CONTAINER FEATURE -->
 
+<div class="container mt-5 " id="feature">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 style="color:#5E8B7E;font-weight: bolder;">SISUAR</h2>
+            <p class="lead">Sistem Surat dan Pengarsipan berbasis web. Aplikasi Sisuar merupakan aplikasi yang dibangun secara khusus untuk kebutuhan administrasi persuratan dan pengarsipan pada Bidang Bina Konstruksi Dinas PUPR Provinsi Kalimantan Selatan.</p>
+            <a href="<?= base_url('/BerandaSurat') ?>">
+                <button type="button" class="btn" style="width:300px;background:#5E8B7E;color: white;font-weight: bold;">Tambah Surat & Arsip</button>
+            </a>
+        </div>
+
+        <div class="col-md-5">
+            <img src="assets\img\surat.svg" style="width:300px;margin-left:180px;" class="card-img-top" alt="...">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+
+</div>
 
 
 
@@ -86,7 +111,7 @@
 
         </div>
         <div class="col-md-5 order-md-1">
-            <img width="532" height="789" src="assets\img\default.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2.png 732w, https://kalselprov.monjaki.id/wp-content/uploads/2020/08/profil-kadis2-222x300.png 222w" sizes="(max-width: 732px) 100vw, 732px">
+            <img width="532" height="789" src="assets\img\pa_kadis.png" class="attachment-large size-large" alt="" loading="lazy" srcset="" sizes="(max-width: 732px) 100vw, 732px">
         </div>
     </div>
 
@@ -147,82 +172,67 @@
 
         <div class="row mt-5">
             <div class="col">
-                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Pengawasan</h3>
-                <img src="assets\img\default.png" width="215px" height="220px" alt="">
+                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi <br> Pengawasan</h3>
+                <img src="assets\img\pa_azzan.png" width="215px" height="220px" alt="">
+                <p class="lead mt-2" style="font-weight:bold">Ir. Azzan Syariful Muaz, ST., MT</p>
+
             </div>
             <div class="col">
-                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Pemberdayaan</h3>
-                <img src="assets\img\default.png" width="215px" height="220px" alt="">
+                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi<br> Pemberdayaan</h3>
+                <img src="assets\img\pa_isur.png" width="215px" height="220px" alt="">
+                <p class="lead mt-2"style="font-weight:bold">Suriansyah, ST</p>
             </div>
             <div class="col">
-                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi Monev & Pengaturan</h3>
-                <img src="assets\img\default.png" width="215px" height="220px" alt="">
+                <h3 style="color:#5E8B7E;font-weight: bolder;">Kepala Seksi<br>Monev & Pengaturan</h3>
+                <img src="assets\img\pa_is.jpeg" width="215px" height="220px" alt="">
+                <p class="lead mt-2" style="font-weight:bold">Israhman, ST</p>
+
             </div>
 
         </div>
     </div>
+    <div class="container " style="height:300px">
 
-
-
-    <!-- CONTAINER FEATURE -->
-
-    <div class="container mt-5 " id="feature">
-
-        <!-- START THE FEATURETTES -->
-        <hr class="featurette-divider">
-
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 style="color:#5E8B7E;font-weight: bolder;">SISUAR</h2>
-                <p class="lead">Sistem Surat dan Pengarsipan berbasis web. Aplikasi Sisuar merupakan aplikasi yang dibangun secara khusus untuk kebutuhan administrasi persuratan dan pengarsipan pada Bidang Bina Konstruksi Dinas PUPR Provinsi Kalimantan Selatan.</p>
-                <a href="<?= base_url('/BerandaSurat') ?>">
-                    <button type="button" class="btn" style="width:300px;background:#5E8B7E;color: white;font-weight: bold;">Tambah Surat</button>
-                </a>
-            </div>
-
-            <div class="col-md-5">
-                <img src="assets\img\surat.svg" style="width:300px;margin-left:180px;" class="card-img-top" alt="...">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-        <!-- /END THE FEATURETTES -->
 
     </div>
+    <hr class="featurette-divider">
+
+
     <!-- PARTER -->
     <div class="container text-center mt-5">
         <div class="row">
+           
             <div class="col text-center">
-                <a href="https://www.pu.go.id/">
-                    <img src="asset\logopupr.jpeg" width="50px" alt="">
+                <a href="https://dinaspupr.kalselprov.go.id/home/">
+                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="30px" alt="">
                 </a>
-                <h3 class="mt-1 mb-2" style="color:black">Kementrian PUPR <br> Republik Indonesia</h3>
-            </div>
-            <div class="col text-center">
-                <a href="https://dinaspupr.kalselprov.go.id/home">
-                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="50px" alt="">
-                </a>
-                <h3 class="mt-1 mb-2" style="color:black">Dinas PUPR <br> Provinsi Kalimantan Selatan</h3>
-            </div>
-            <div class="col text-center">
-                <a href="https://pamsimas.pu.go.id/">
-                    <img src="asset\logopamsinas.png" width="80px" alt="">
-                </a>
-                <h3 class="mt-1 " style="color:black">PAMSIMAS <br> Republik Indonesia</h3>
+                <h6 class="mt-3 mb-2" style="color:black">Dinas PUPR <br> Provinsi Kalimantan Selatan</h6>
             </div>
             <div class="col text-center">
                 <a href="https://kalselprov.go.id/">
-                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="50px" alt="">
+                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="30px" alt="">
                 </a>
-                <h3 class="mt-1 mb-2" style="color:black">Provinsi Kalimantan Selatan</h3>
+                <h6 class="mt-3 mb-2" style="color:black">Pemerintah <br> Provinsi Kalimantan Selatan</h6>
             </div>
             <div class="col text-center">
-                <a href="https://binakonstruksi.pu.go.id/">
-                    <img src="asset\logopupr.jpeg" width="50px" alt="">
+                <a href="https://www.pu.go.id/">
+                    <img src="assets\img\logopupr.jpeg" width="30px" alt="">
                 </a>
-                <h3 class="mt-1 mb-2" style="color:black">Direktorat Jendral <br> Binakontruksi PUPR </h3>
+                <h6 class="mt-3 mb-2" style="color:black">Kementrian PUPR <br> Republik Indonesia</h6>
             </div>
+            <div class="col text-center">
+                <a href="http://binakontruksi.neumedira.com/">
+                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="30px" alt="">
+                </a>
+                <h6 class="mt-3 mb-2" style="color:black">Sistem Informasi<br> Bina Kontruksi (SIBIKO)</h6>
+            </div>
+            <div class="col text-center">
+                <a href="https://kalselprov.monjaki.id/">
+                    <img src="https://raw.githubusercontent.com/aldiskatel/cdn/main/dist/2.png" width="30px" alt="">
+                </a>
+                <h6 class="mt-3 mb-2" style="color:black">Sistem Informasi<br> Monitoring Jasa Kontruksi (MONJAKI)</h6>
+            </div>
+
         </div>
     </div>
 
