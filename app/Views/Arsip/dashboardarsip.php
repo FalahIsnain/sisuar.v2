@@ -6,21 +6,18 @@
     <a href="<?= base_url('/Arsip') ?>">
         <button class="btn btn-primary mt-2 mb-2" type="submit"><i class="fas fa-plus"></i> Tambah Arsip</button>
     </a>
+    <div class="col-4">
 
+    </div>
     <div class="card-body">
-        <table id="datatablesSimple" class="table table-hover">
+
+        <table id="tabelarsip" class="table table-hover">
             <thead>
-                <tr style="background-color:#A8876F;color:white ;">
+                <tr style="background-color:#8FBDD3;color:white ;">
                     <th>Nama Dokumen</th>
                     <th>Jenis Dokumen</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <th>Nama Dokumen</th>
-                    <th>Jenis Dokumen</th>
-                </tr>
-            </tfoot>
             <tbody>
                 <?php $i = 1 ?>
                 <?php foreach ($arsip as $sm) : ?>
@@ -52,6 +49,8 @@
             </tbody>
         </table>
     </div>
+
+
 
 
 </div>

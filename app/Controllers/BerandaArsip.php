@@ -19,9 +19,8 @@ class BerandaArsip extends BaseController
         $data = [
             'title' => 'SISUAR BINKON',
             'arsip' => $this->ArsipModels->getArsip(),
+            'jenis' => $this->ArsipModels->getJenis(),
         ];
         return view('arsip/dashboardarsip.php', $data);
     }
-
-  
 }
