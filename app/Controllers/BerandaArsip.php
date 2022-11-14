@@ -23,4 +23,14 @@ class BerandaArsip extends BaseController
         ];
         return view('arsip/dashboardarsip.php', $data);
     }
+    public function cetakFilterJenisArsip()
+    {
+        $jenis = $this->request->getPost('filterJenis');
+        $data = [
+            'title' => 'Filter Surat Masuk',
+            'dataFilterJenis' => $this->ArsipModels->filterJenis($jenis),
+            'jenis' => $this->ArsipModels->getJenis(),
+        ];
+        return view('arsip/cetakfilterjenisarsip.php', $data);
+    }
 }

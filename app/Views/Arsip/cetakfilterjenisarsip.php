@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Dashboard Arsip</h1>
+    <h1 class="mt-4"> Filter Jenis Arsip</h1>
     <a href="<?= base_url('/Arsip') ?>">
         <button class="btn btn-primary mt-2 mb-2" type="submit"><i class="fas fa-plus"></i> Tambah Arsip</button>
     </a>
@@ -40,7 +40,7 @@
             </thead>
             <tbody>
                 <?php $i = 1 ?>
-                <?php foreach ($arsip as $sm) : ?>
+                <?php foreach ($dataFilterJenis->getResultArray() as $sm) : ?>
                     <tr>
                         <td>
                             <div class="accordion" id="accordionExample">

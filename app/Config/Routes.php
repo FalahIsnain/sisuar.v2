@@ -36,7 +36,6 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/', 'Home::index');
 $routes->get('/BerandaSurat', 'BerandaSurat::index');
 $routes->get('/Arsip', 'Arsip::index');
 $routes->get('/BerandaArsip', 'BerandaArsip::index');
@@ -52,12 +51,13 @@ $routes->delete('/SuratKeluar/(:num)', 'SuratKeluar::hapusSuratKeluar/$1');
 $routes->delete('/SuratTugas/(:num)', 'SuratTugas::hapusSuratTugas/$1');
 $routes->delete('/Arsip/(:num)', 'Arsip::hapusArsip/$1');
 $routes->delete('/Arsip/indexJenis/(:num)', 'Arsip::hapusJenis/$1');
-
 $routes->add('/SuratMasuk/edit/(:any)', 'SuratMasuk::edit/$1');
 $routes->add('/SuratKeluar/edit/(:any)', 'SuratKeluar::edit/$1');
 $routes->add('/SuratTugas/edit/(:any)', 'SuratTugas::edit/$1');
 $routes->add('/SuratMasuk/disposisi/(:any)', 'SuratMasuk::disposisi/$1');
 $routes->add('/Arsip/(:any)', 'Arsip::$1');
+$routes->add('/Arsip/cetakFilterJenisArsip/(:any)', 'Arsip::cetakFilterJenisArsip');
+$routes->post('/BerandaArsip/cetakFilterJenisArsip', 'BerandaArsip::cetakFilterJenisArsip');
 
 
 /*

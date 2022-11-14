@@ -110,7 +110,7 @@ class Arsip extends BaseController
             'tanggalMin' => date('d-M-Y', strtotime($tglmin)),
             'tanggalMax' => date('d-M-Y', strtotime($tglmax)),
         ];
-        
+
         return view('arsip/cetakfilterarsip.php', $data);
     }
 
@@ -165,4 +165,6 @@ class Arsip extends BaseController
             die($e->getMessage());
         }
     }
+
+    
 }

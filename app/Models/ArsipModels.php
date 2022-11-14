@@ -44,6 +44,6 @@ class ArsipModels extends Model
     public function filterJenis($jenis)
     {
         return $this->table('arsip')
-            ->join('jenis_arsip', 'jenis_arsip.id_jenis=arsip.id_jenis')->where('nama_jenis', $jenis)->get();
+            ->join('jenis_arsip', 'jenis_arsip.id_jenis=arsip.id_jenis')->where('arsip.id_jenis', $jenis)->get();
     }
 }
