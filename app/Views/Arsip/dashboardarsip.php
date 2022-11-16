@@ -8,7 +8,7 @@
     </a>
 
 
-    <form class="row g-3 needs-validation" method="post" action="<?= base_url('/BerandaArsip/cetakFilterJenisArsip') ?>" enctype="multipart/form-data" novalidate>
+    <form class="row g-3 needs-validation" method="post" action="<?= base_url('/FilterArsip') ?>" enctype="multipart/form-data" novalidate>
         <div class="col-4">
             <div class="btn-group submitter-group float-right">
                 <div class="input-group-prepend">
@@ -36,6 +36,7 @@
                 <tr style="background-color:#8FBDD3;color:white ;">
                     <th>Nama Dokumen</th>
                     <th>Jenis Dokumen</th>
+                    <th>Unduh</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +65,11 @@
                         </td>
 
                         <td><?= $sm['nama_jenis'] ?></td>
+                        <td>
+                            <a href="<?= base_url('asset/pdf/' . $sm['file_arsip']) ?>">
+                                <button type="button" class="btn btn-success">unduh</button>
+                            </a>
+                        </td>
                     </tr>
                     <?php $i++ ?>
                 <?php endforeach; ?>

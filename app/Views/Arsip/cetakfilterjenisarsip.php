@@ -8,7 +8,7 @@
     </a>
 
 
-    <form class="row g-3 needs-validation" method="post" action="<?= base_url('/BerandaArsip/cetakFilterJenisArsip') ?>" enctype="multipart/form-data" novalidate>
+    <form class="row g-3 needs-validation" method="post" action="<?= base_url('/FilterArsip') ?>" enctype="multipart/form-data" novalidate>
         <div class="col-4">
             <div class="btn-group submitter-group float-right">
                 <div class="input-group-prepend">
